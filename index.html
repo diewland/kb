@@ -1,0 +1,50 @@
+<link href="lib/lightbox.css" rel="stylesheet" />
+<script type='text/javascript' src='lib/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='lib/lightbox-2.6.min.js'></script>
+
+<style type='text/css'>
+	.box {
+		float: left;
+		width: 500px;
+		height: 220px;
+	}
+	.box img {
+		vertical-align: top;
+	}
+	.ani { width: 200px; }
+	.graph { width: 250px; }
+</style>
+
+http://www.overclock.net/t/491752/mechanical-keyboard-guide
+<div id='main'></div>
+
+<script type="text/javascript">
+	// get main object
+	main = document.getElementById('main');
+
+	// add childs
+	var list = [
+		'cmx_red',
+		'cmx_blue',
+		'cmx_black',
+		'cmx_brown',
+		'cmx_clear',
+		'cmx_green',
+		'buckling_spring',
+		'topre',
+	];
+	for(var i=0; i<list.length; i++){
+		var name = list[i];
+		var animate = "<a data-lightbox='set' title='" + name + " animation' href='res/" + name + ".gif'>"
+						+ "<img src='res/" + name + ".gif' class='ani' />"
+						+ "</a>";
+		var graph = "<a data-lightbox='set' title='" + name + " graph' href='res/" + name + "_graph.jpg'>"
+						+ "<img src='res/" + name + "_graph.jpg' class='graph' />"
+						+ "</a>";
+		main.innerHTML += "<div class='box'>"
+						+ animate
+						+ ' '
+						+ graph
+						+ "</div>";
+	}
+</script>
